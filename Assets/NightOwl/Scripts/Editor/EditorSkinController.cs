@@ -27,7 +27,7 @@ namespace NightOwl.Scripts.Editor
             var switchSkinSound = AssetDatabase.LoadAssetAtPath<AudioClip>(CurrentSkinType == EditorSkinType.Dark
                 ? Constant.Constant.AssetPath.NightOwlDarkAudio
                 : Constant.Constant.AssetPath.NightOwlLightAudio);
-            if (switchSkinSound)
+            if (switchSkinSound && !AudioUtility.IsClipPlaying(switchSkinSound))
                 AudioUtility.PlayClip(switchSkinSound);
         }
     }

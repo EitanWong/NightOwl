@@ -124,8 +124,8 @@ public class NightOwlPreference : Editor
             return;
 
         EditorGUILayout.BeginVertical(Constant.GUIStyle.Box);
-
-        var tmpAmHour = EditorGUILayout.IntSlider("AM:", AmHourTime, 0, 12);
+        EditorGUILayout.LabelField("AmSetting", EditorStyles.boldLabel);
+        var tmpAmHour = EditorGUILayout.IntSlider("Hour:", AmHourTime, 0, 12);
         if (AmHourTime != tmpAmHour)
         {
             AmHourTime = tmpAmHour;
@@ -150,7 +150,8 @@ public class NightOwlPreference : Editor
 
 
         EditorGUILayout.BeginVertical(Constant.GUIStyle.Box);
-        var tmpPmHour = EditorGUILayout.IntSlider("PM:", PmHourTime, 0, 12);
+        EditorGUILayout.LabelField("PmSetting", EditorStyles.boldLabel);
+        var tmpPmHour = EditorGUILayout.IntSlider("Hour:", PmHourTime, 0, 12);
         if (PmHourTime != tmpPmHour)
         {
             PmHourTime = tmpPmHour;
